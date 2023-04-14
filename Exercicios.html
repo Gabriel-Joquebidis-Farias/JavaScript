@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+
+    <script type="text/javascript">
+
+        function CalcArea() {
+
+        var area = document.getElementById("area").value;
+        var raio = document.getElementById("Raio").Value;
+
+        if(raio.trim() == ""){
+            alert("Informe o raio");
+            console.log("Erro");
+        } else{
+            area = 3,14*(raio*raio);
+            document.getElementById("area").innerHTML = area
+        }
+        }
+    </script>
+
+</head>
+<body>
+  
+    <h1>Calculo de IMC</h1>
+
+    <form>
+        Raio: <br>
+        <input type="text" id="raio" ><span id="msmRaio"></span>
+    <br><br>
+    
+    <input type="button" value="Área" onclick="CalcArea();">
+    <input type="button" value="Perimetro" onclick="CalcPerimetro();">
+        <br><br>    
+    Área: <br>
+    <input type="text" id="area"><span id="msmArea"></span>
+    <br> <br>
+    Perimetro: <span id="msm"></span>
+</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    
+<head>
+  <title>Document</title>
+
+<script type="text/javascript">      
+
+    function gerarCidades() {
+      var estado = document.getElementById("estado").value;
+      var cidade = document.getElementById("cidade");
+
+      var cidadesSP = ['Limeira', 'Campinas', 'Valinhos', 'x', 'y', 'z'];
+      var cidadesMG = ['Varginha', 'Belo Horizonte', 'Mantimento'];
+      var cidadesRJ = ['Rio de Janeiro', 'Niterói', 'Angra dos Reis'];
+
+      var option = "";
+
+      if (estado == "") {
+        limpaCombo();
+      }
+      
+      if (estado == "SP") {
+        limpaCombo();
+        alimentaCombo(cidadesSP); 
+      }
+
+      if (estado == "MG") {
+        limpaCombo();
+        alimentaCombo(cidadesMG);                
+      }    
+
+      if (estado == "RJ") {
+        limpaCombo();
+        alimentaCombo(cidadesRJ);        
+    }
+
+    function limpaCombo() {
+      var comboCidades = document.getElementById("cidade");
+      
+      while (comboCidades.length) {
+        comboCidades.remove(0);
+      }
+    }
+
+    function alimentaCombo(cidades) {
+        for (var i = 0; i < cidades.length; i++) {
+          option = document.createElement("option");
+          option.value = i;
+          option.text = cidades[i];
+          cidade.add(option);    
+        }       
+    }
+    
+  </script>  
+</head>
+    
+<body>    
+
+  <form>
+    Estado:<br>
+    <select id="estado" onchange="gerarCidades();">
+      <option></option>
+      <option value="SP">SP</option>
+      <option value="MG">MG</option>
+      <option value="RJ">RJ</option>
+    </select>       
+
+    <br><br>
+    Cidade:<br>
+    <select id="cidade"></select>                     
+  </form>   
+    
+</body>
+    
+</html>
